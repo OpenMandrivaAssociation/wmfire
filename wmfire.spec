@@ -9,7 +9,6 @@ Source1:	%{name}-icons.tar.bz2
 URL:		http://www.swanson.ukfsn.org/%{name}-%{version}.tar.gz
 BuildRequires:	X11-devel, libgtop2.0-devel, xpm-devel
 BuildRequires:	gtk+2-devel
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 
 %description
