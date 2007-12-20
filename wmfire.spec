@@ -41,11 +41,15 @@ tar xOjf %SOURCE1 16x16.png > %buildroot%{_miconsdir}/%{name}.png
 tar xOjf %SOURCE1 32x32.png > %buildroot%{_iconsdir}/%{name}.png
 tar xOjf %SOURCE1 48x48.png > %buildroot%{_liconsdir}/%{name}.png
 
-install -m 755 -d %buildroot%{_menudir}
-cat << EOF > %buildroot%{_menudir}/%{name}
-?package(%{name}):command="%{_bindir}/%{name}" icon="%{name}.png"\\
-                 needs="X11" section="System/Monitoring" title="WmFire"\\
-                 longtitle="A dock.app that displays CPU load as fire in a small icon"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{_bindir}/%{name}
+Icon=%{name}.png
+Categories=System;Monitor;
+Name=WmFire                 
+Comment=A dock.app that displays CPU load as fire in a small icon
 EOF
 
 %post
@@ -66,5 +70,5 @@ EOF
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 
