@@ -47,7 +47,7 @@ cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
 [Desktop Entry]
 Type=Application
 Exec=%{_bindir}/%{name}
-Icon=%{name}.png
+Icon=%{name}
 Categories=System;Monitor;
 Name=WmFire                 
 Comment=A dock.app that displays CPU load as fire in a small icon
