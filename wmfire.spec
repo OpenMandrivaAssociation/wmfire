@@ -53,11 +53,15 @@ Name=WmFire
 Comment=A dock.app that displays CPU load as fire in a small icon
 EOF
 
+%if %mdkversion < 200900
 %post
 %{update_menus}
+%endif
 
+%if %mdkversion < 200900
 %postun
 %{clean_menus}
+%endif
 
 %clean
 [ -z %buildroot ] || {
