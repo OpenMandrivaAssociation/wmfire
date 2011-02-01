@@ -1,16 +1,17 @@
 Summary: A WindowMaker dock.app that displays CPU load as fire in a small icon
 Name:		wmfire
 Version: 1.2.3
-Release: %mkrel 6
+Release: %mkrel 7
 License:	GPL
 Group:		Graphical desktop/WindowMaker
 Source:		%{name}-%{version}.tar.bz2
 Source1:	%{name}-icons.tar.bz2
+Patch0:		wmfire-1.2.3-fix-link.patch
 URL:		http://www.swanson.ukfsn.org/%{name}-%{version}.tar.gz
-BuildRequires:	X11-devel, libgtop2.0-devel, xpm-devel
 BuildRequires:	gtk+2-devel
+BuildRequires:	libx11-devel
+BuildRequires:	libgtop2.0-devel
 BuildRoot:	%{_tmppath}/%{name}-buildroot
-
 
 %description
 wmfire is an eye-candy dock applet for Window Maker that displays generated
@@ -21,12 +22,12 @@ display your motherboard temperature through lm_sensors.
 
 
 %prep
-rm -rf %buildroot
-
-%setup
+%setup -q
+%patch0 -p0
 
 %build
-%configure 
+autoreconf -fi
+%configure2_5x
 %make
 
 %install
