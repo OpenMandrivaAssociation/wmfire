@@ -1,17 +1,15 @@
-Summary: A WindowMaker dock.app that displays CPU load as fire in a small icon
+Summary:	A WindowMaker dock.app that displays CPU load as fire in a small icon
 Name:		wmfire
-Version: 1.2.3
-Release: %mkrel 7
-License:	GPL
+Version:	1.2.4
+Release:	1
+License:	GPLv2
 Group:		Graphical desktop/WindowMaker
-Source:		%{name}-%{version}.tar.bz2
+Source:		%{name}-%{version}.tar.gz
 Source1:	%{name}-icons.tar.bz2
-Patch0:		wmfire-1.2.3-fix-link.patch
 URL:		http://www.swanson.ukfsn.org/%{name}-%{version}.tar.gz
 BuildRequires:	gtk+2-devel
 BuildRequires:	libx11-devel
 BuildRequires:	libgtop2.0-devel
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 wmfire is an eye-candy dock applet for Window Maker that displays generated
@@ -23,28 +21,21 @@ display your motherboard temperature through lm_sensors.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
-autoreconf -fi
 %configure2_5x
 %make
 
 %install
 [ -d %buildroot ] && rm -rf %buildroot
 
-install -m 755 -d %buildroot%_bindir
-install -m 755 src/%{name} %buildroot%_bindir
-#{fireload_cpu,fireload_file}
-install -m 755 -d %buildroot%{_miconsdir}
-install -m 755 -d %buildroot%{_iconsdir}
-install -m 755 -d %buildroot%{_liconsdir}
-tar xOjf %SOURCE1 16x16.png > %buildroot%{_miconsdir}/%{name}.png
-tar xOjf %SOURCE1 32x32.png > %buildroot%{_iconsdir}/%{name}.png
-tar xOjf %SOURCE1 48x48.png > %buildroot%{_liconsdir}/%{name}.png
+%makeinstall_std
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
-cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+install -m 755 -d %buildroot%{_datadir}/pixmaps
+tar xOjf %SOURCE1 48x48.png > %buildroot%{_datadir}/pixmaps/%{name}.png
+
+mkdir -p %{buildroot}%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/%{name}.desktop
 [Desktop Entry]
 Type=Application
 Exec=%{_bindir}/%{name}
@@ -73,8 +64,7 @@ EOF
 %defattr (-,root,root)
 %doc README ChangeLog INSTALL NEWS AUTHORS COPYING
 %{_bindir}/*
-%{_liconsdir}/%{name}.png
-%{_miconsdir}/%{name}.png
-%{_iconsdir}/%{name}.png
-%{_datadir}/applications/mandriva-%{name}.desktop
+%{_datadir}/pixmaps/%{name}.png
+%{_datadir}/applications/%{name}.desktop
+%{_mandir}/man1/*
 
