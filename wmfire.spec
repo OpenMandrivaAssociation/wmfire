@@ -8,7 +8,7 @@ Source:		%{name}-%{version}.tar.gz
 Source1:	%{name}-icons.tar.bz2
 URL:		http://www.swanson.ukfsn.org/%{name}-%{version}.tar.gz
 BuildRequires:	gtk+2-devel
-BuildRequires:	libx11-devel
+BuildRequires:	pkgconfig(x11)
 BuildRequires:	libgtop2.0-devel
 
 %description
