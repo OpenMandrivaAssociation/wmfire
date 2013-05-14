@@ -1,13 +1,13 @@
 Summary:	A WindowMaker dock.app that displays CPU load as fire in a small icon
 Name:		wmfire
 Version:	1.2.4
-Release:	2
+Release:	3
 License:	GPLv2
 Group:		Graphical desktop/WindowMaker
 Source:		%{name}-%{version}.tar.gz
 Source1:	%{name}-icons.tar.bz2
 URL:		http://www.swanson.ukfsn.org/%{name}-%{version}.tar.gz
-BuildRequires:	gtk+2-devel
+BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	libgtop2.0-devel
 
@@ -116,10 +116,10 @@ EOF
 * Fri Mar 10 2006 Jerome Soyer <saispo@mandriva.org> 1.2.3-1mdk
 - New release 1.2.3
 
-* Wed May 25 2005 Nicolas L閏ureuil <neoclust@mandriva.org> 1.2.2-4mdk
+* Wed May 25 2005 Nicolas L茅cureuil <neoclust@mandriva.org> 1.2.2-4mdk
 - Rebuild
 
-* Sat Mar 19 2005 Nicolas L閏ureuil <neoclust@mandrake.org> 1.2.2-3mdk
+* Sat Mar 19 2005 Nicolas L茅cureuil <neoclust@mandrake.org> 1.2.2-3mdk
 - Fix summary 
 - Rebuild 
 
@@ -138,7 +138,7 @@ EOF
 * Tue Jan 28 2003 Lenny Cartier <lenny@mandrakesoft.com> 0.0.3.9pre4-7mdk
 - rebuild
 
-* Mon Feb 11 2002 HA Qu鬰-Vi阾 <viet@mandrakesoft.com> 0.0.3.9pre4-6mdk
+* Mon Feb 11 2002 HA Qu么c-Vi锚t <viet@mandrakesoft.com> 0.0.3.9pre4-6mdk
 - xpm icons converted to png.
 - I know that the version number won't let people upgrade cleanly to 0.0.3.9
   when that one will be out, but look, the website is dead, and there has
@@ -147,29 +147,29 @@ EOF
 * Fri Aug 31 2001 Etienne Faure <etienne@mandrakesoft.com> 0.0.3.9pre4-5mdk
 - rebuild
 
-* Wed Feb 21 2001 HA Qu鬰-Vi阾 <viet@mandrakesoft.com> 0.0.3.9pre4-4mdk
+* Wed Feb 21 2001 HA Qu么c-Vi锚t <viet@mandrakesoft.com> 0.0.3.9pre4-4mdk
 - merge between Lenny's spec and mine
 
 * Mon Jan 22 2001 Lenny Cartier <lenny@mandrakesoft.com> 0.0.3.9pre4-3mdk
 - fix files section (thx Viet) 
 
-* Tue Oct 31 2000 HA Qu鬰-Vi阾 <viet@mandrakesoft.com> 0.0.3.9pre4-3mdk
+* Tue Oct 31 2000 HA Qu么c-Vi锚t <viet@mandrakesoft.com> 0.0.3.9pre4-3mdk
 - small fix in spec file : _tmppath
 - not released
 
 * Wed Sep 20 2000 Lenny Cartier <lenny@mandrakesoft.com> 0.0.3.9pre4-2mdk
 - macros
 
-* Mon Aug 02 2000 HA Qu鬰-Vi阾 <viet@mandrakesoft.com> 0.0.3.9pre4-1mdk
+* Mon Aug 02 2000 HA Qu么c-Vi锚t <viet@mandrakesoft.com> 0.0.3.9pre4-1mdk
 - menu entry added
 - 16x16, 32x32 and 48x48 icons added
 
-* Mon Jul 31 2000 HA Qu鬰-Vi阾 <viet@mandrakesoft.com> 0.0.3.9pre4-1mdk
+* Mon Jul 31 2000 HA Qu么c-Vi锚t <viet@mandrakesoft.com> 0.0.3.9pre4-1mdk
 - better list of dependencies 
 - the version  number was missing in the last changelog
 - the package revision has been adjusted to the naming convention
 - not released
 
-* Wed Jul 12 2000 HA Qu鬰-Vi阾 <viet@mandrakesoft.com> 0.0.3.9pre4-0mdk
+* Wed Jul 12 2000 HA Qu么c-Vi锚t <viet@mandrakesoft.com> 0.0.3.9pre4-0mdk
 - Initial release.
 - no changes made to the original archive
