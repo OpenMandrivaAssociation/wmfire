@@ -1,7 +1,7 @@
 Summary:	A WindowMaker dock.app that displays CPU load as fire in a small icon
 Name:		wmfire
 Version:	1.2.4
-Release:	4
+Release:	5
 License:	GPLv2
 Group:		Graphical desktop/WindowMaker
 Url:		http://www.swanson.ukfsn.org/%{name}-%{version}.tar.gz
