@@ -4,7 +4,7 @@ Version:	1.2.4
 Release:	5
 License:	GPLv2
 Group:		Graphical desktop/WindowMaker
-Url:		http://www.swanson.ukfsn.org/%{name}-%{version}.tar.gz
+Url:		https://www.swanson.ukfsn.org/%{name}-%{version}.tar.gz
 Source0:	%{name}-%{version}.tar.gz
 Source1:	%{name}-icons.tar.bz2
 BuildRequires:	pkgconfig(gtk+-2.0)
