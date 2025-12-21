@@ -7,6 +7,11 @@ Group:		Graphical desktop/WindowMaker
 Url:		https://www.swanson.ukfsn.org/%{name}-%{version}.tar.gz
 Source0:	%{name}-%{version}.tar.gz
 Source1:	%{name}-icons.tar.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(libgtop-2.0)
 BuildRequires:	pkgconfig(x11)
